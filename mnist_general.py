@@ -202,7 +202,7 @@ def create_layer_dense(layer_number,NWArch):
         units = NWArch[PreFix + 'size'],
         activation = NWArch[PreFix + 'Activation'])
     
-    if NWArch['NumberOfLayers'] == layer_number + 1:
+    if NWArch['NumberOfLayers'] != layer_number + 1:
         NWArch[PreFix + 'output'] = tf.layers.dropout(
             inputs = DenseOutput,
             rate = NWArch[PreFix + 'dropout'])
